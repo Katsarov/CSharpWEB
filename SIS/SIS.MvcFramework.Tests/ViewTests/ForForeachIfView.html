@@ -1,0 +1,15 @@
+﻿<h1>Hello!</h1>
+@if(Date.Time.UtcNow.Year == 2021)
+{
+    @for (int i = 1; i <=10; i++)
+    {
+        @if (i % 3 == 0)
+        {
+            <p><span>@i</span> <span>@Date.Time.UtcNow.Year</span></p>
+        }
+    }
+}
+
+
+
+
