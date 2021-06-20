@@ -1,0 +1,20 @@
+﻿@model List<CatModel>
+
+<h2>
+    @Model.Count cats in the system:
+</h2>
+
+@if (Model.Any())
+{
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li>@cat.Name (@cat.Age years old) by @cat.Owner</li>
+    }
+</ul>
+}
+
+else
+{
+    <h3>No cats available</h3>
+}
