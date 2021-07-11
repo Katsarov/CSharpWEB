@@ -1,0 +1,44 @@
+﻿
+@using WebAppMVC.Services
+
+@model List<CatViewModel>
+
+@inject ICustomViewData customViewData
+
+
+@section Styles{ 
+    <link href="~/css/cats.css" rel="stylesheet" />
+}
+
+<a asp-controller="Cats" asp-action="Crown">Create new cat</a>
+
+
+<h1>
+    All cats - @(Model.Count * 10)
+    @(Model.Any() ? Model.Count : "No cats")
+</h1>
+
+@customViewData.GetViewData()
+<br />My account tag is @@kalin.katsarov
+
+<ul class="cats">
+    @foreach (var cat in Model)
+    {
+        <li>
+            @cat.Name - @cat.Age
+        </li>
+    }
+
+</ul>
+
+
+
+<h2>
+    All cats - @(Model.Count * 10)
+</h2>
+
+@section Scripts{ 
+    <script>
+        document.getElementsByClassName('cats')[0].innerHTML = '<li>Changed by the power of JS</li>';
+    </script>
+}

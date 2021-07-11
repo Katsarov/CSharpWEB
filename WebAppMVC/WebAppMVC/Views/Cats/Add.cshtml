@@ -1,0 +1,48 @@
+﻿
+
+@model List<CatViewModel>
+
+<h1>
+
+    <h5>Current year - @DateTime.UtcNow.Year</h5>
+
+    @{
+        ViewData["Current name"] = "<h5 style='color: red'> King </h5>";
+
+        ViewData["myName"] = "<h1 style='color: blue'> Kalin Katsarov </h1>";
+
+        var mySchool = "SoftUni";
+
+        var myCats = new List<CatViewModel>
+{
+            new CatViewModel {Name = "Toto", Age = 5},
+            new CatViewModel {Name = "Mini", Age = 10}
+        };
+
+    }
+
+
+
+    @Html.Raw(ViewData["Current name"])
+    @Html.Raw(ViewData["myName"])
+
+    <h3>@mySchool</h3>
+
+
+    <h6 style='color: green'>Year - @DateTime.UtcNow.Year </h6>
+
+
+</h1>
+
+
+My account tag is @@kalin.katsarov
+
+<ul>
+    @foreach (var cat in myCats)
+    {
+        <li>
+            @cat.Name - @cat.Age
+        </li>
+    }
+
+</ul>

@@ -1,0 +1,14 @@
+﻿@model List<CatViewModel>
+@using WebAppMVC.Components;
+
+<h1>
+    All cats
+</h1>
+
+@foreach (var cat in Model)
+{
+    <partial name="_Cat" model="cat" />
+}
+
+
+<vc:custom-component name="Kalin"></vc:custom-component>
